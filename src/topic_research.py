@@ -1,4 +1,9 @@
-"""Stage 1: select a historical topic and gather source material."""
+"""Stage 1: select the historical topic for a video.
+
+Research itself happens in Cursor Composer while the script is authored; the
+resulting summary, era and sources are stored on the script's `topic` field.
+This stage only builds the `Topic` used to locate that script.
+"""
 
 from __future__ import annotations
 
@@ -11,9 +16,6 @@ logger = logging.getLogger(__name__)
 
 
 def research_topic(title: str, settings: Settings) -> Topic:
-    """Return a `Topic` populated with a summary and reference sources.
-
-    Implement with an LLM and/or web search using the credentials in `settings`.
-    """
-    logger.info("Researching topic: %s", title)
-    raise NotImplementedError("topic research is not implemented yet")
+    """Return a `Topic` for `title`; enriched details live in the script JSON."""
+    logger.info("Selected topic: %s", title)
+    return Topic(title=title.strip())

@@ -3,6 +3,10 @@
 Values are read from environment variables, which are populated from a `.env`
 file at the project root (see `.env.example`). Only the standard library is
 used here so the config layer works before any dependencies are installed.
+
+The stack is fixed by `.cursorrules`: ElevenLabs (audio), ComfyUI (images),
+FFmpeg (rendering). Scripts are authored in Cursor Composer, so no LLM vendor
+credentials are needed.
 """
 
 from __future__ import annotations
@@ -13,6 +17,9 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = PROJECT_ROOT / ".env"
+
+DEFAULT_COMFYUI_URL = "http://127.0.0.1:8188"
+DEFAULT_ELEVENLABS_MODEL_ID = "eleven_multilingual_v2"
 
 
 def load_dotenv(path: Path = ENV_FILE, *, override: bool = False) -> None:
@@ -36,10 +43,15 @@ def load_dotenv(path: Path = ENV_FILE, *, override: bool = False) -> None:
 
 @dataclass(frozen=True)
 class Paths:
-    """Filesystem layout for generated assets."""
+    """Filesystem layout for scripts and generated assets."""
 
     root: Path = PROJECT_ROOT
     output: Path = PROJECT_ROOT / "output"
+
+    @property
+    def episodes(self) -> Path:
+        """Cursor-authored, Pydantic-validated script JSON files."""
+        return self.root / "episodes"
 
     @property
     def audio(self) -> Path:
@@ -63,18 +75,17 @@ class Paths:
 class Settings:
     """API credentials and runtime options for the pipeline."""
 
-    # Script generation
-    openai_api_key: str = ""
-    anthropic_api_key: str = ""
-    # Voiceover
+    # Voiceover (ElevenLabs)
     elevenlabs_api_key: str = ""
     elevenlabs_voice_id: str = ""
-    # Image generation
-    stability_api_key: str = ""
-    replicate_api_token: str = ""
-    # Stock media
-    pexels_api_key: str = ""
-    pixabay_api_key: str = ""
+    elevenlabs_model_id: str = DEFAULT_ELEVENLABS_MODEL_ID
+    # Image generation (ComfyUI)
+    comfyui_url: str = DEFAULT_COMFYUI_URL
+    comfyui_checkpoint: str = ""
+    comfyui_workflow: Path | None = None
+    # Video rendering (FFmpeg)
+    ffmpeg_binary: str = "ffmpeg"
+    ffprobe_binary: str = "ffprobe"
     # YouTube upload
     youtube_client_id: str = ""
     youtube_client_secret: str = ""
@@ -91,15 +102,19 @@ class Settings:
         output_path = Path(output_dir)
         if not output_path.is_absolute():
             output_path = PROJECT_ROOT / output_path
+        workflow = os.getenv("COMFYUI_WORKFLOW", "").strip()
+        workflow_path = Path(workflow) if workflow else None
+        if workflow_path is not None and not workflow_path.is_absolute():
+            workflow_path = PROJECT_ROOT / workflow_path
         return cls(
-            openai_api_key=os.getenv("OPENAI_API_KEY", ""),
-            anthropic_api_key=os.getenv("ANTHROPIC_API_KEY", ""),
             elevenlabs_api_key=os.getenv("ELEVENLABS_API_KEY", ""),
             elevenlabs_voice_id=os.getenv("ELEVENLABS_VOICE_ID", ""),
-            stability_api_key=os.getenv("STABILITY_API_KEY", ""),
-            replicate_api_token=os.getenv("REPLICATE_API_TOKEN", ""),
-            pexels_api_key=os.getenv("PEXELS_API_KEY", ""),
-            pixabay_api_key=os.getenv("PIXABAY_API_KEY", ""),
+            elevenlabs_model_id=os.getenv("ELEVENLABS_MODEL_ID", DEFAULT_ELEVENLABS_MODEL_ID),
+            comfyui_url=os.getenv("COMFYUI_URL", DEFAULT_COMFYUI_URL).rstrip("/"),
+            comfyui_checkpoint=os.getenv("COMFYUI_CHECKPOINT", ""),
+            comfyui_workflow=workflow_path,
+            ffmpeg_binary=os.getenv("FFMPEG_BINARY", "ffmpeg"),
+            ffprobe_binary=os.getenv("FFPROBE_BINARY", "ffprobe"),
             youtube_client_id=os.getenv("YOUTUBE_CLIENT_ID", ""),
             youtube_client_secret=os.getenv("YOUTUBE_CLIENT_SECRET", ""),
             youtube_refresh_token=os.getenv("YOUTUBE_REFRESH_TOKEN", ""),
@@ -109,15 +124,11 @@ class Settings:
         )
 
     def missing_keys(self) -> list[str]:
-        """Return the names of API credentials that are still blank."""
+        """Return the names of credentials that are still blank."""
         credential_fields = (
-            "openai_api_key",
-            "anthropic_api_key",
             "elevenlabs_api_key",
-            "stability_api_key",
-            "replicate_api_token",
-            "pexels_api_key",
-            "pixabay_api_key",
+            "elevenlabs_voice_id",
+            "comfyui_checkpoint",
             "youtube_client_id",
             "youtube_client_secret",
             "youtube_refresh_token",

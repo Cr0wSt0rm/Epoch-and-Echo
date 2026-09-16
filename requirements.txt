@@ -1,0 +1,6 @@
+# Runtime dependencies (Python 3.11+). System dependency: ffmpeg (provides ffmpeg + ffprobe).
+pydantic>=2.7,<3
+requests>=2.32,<3
+
+# Development
+pytest>=8.0

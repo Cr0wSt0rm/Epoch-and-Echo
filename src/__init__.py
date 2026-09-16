@@ -1,13 +1,13 @@
-"""YouTube history video automation pipeline.
+"""Epoch & Echo history video automation pipeline.
 
-Stages (each lives in its own module so they can be swapped or tested alone):
+Every scene maps exactly Narration Text -> Audio -> Image -> Video Stitching:
 
-1. `topic_research`   - pick and research a historical topic
-2. `script_generator` - turn research into a narrated script
-3. `voiceover`        - synthesize narration audio  -> output/audio/
-4. `image_generator`  - create visuals per scene     -> output/images/
-5. `video_assembler`  - combine audio + images       -> output/final_videos/
+1. `topic_research`   - select the topic (research happens while scripting)
+2. `script_generator` - validate the Cursor-authored script (Pydantic)
+3. `voiceover`        - ElevenLabs narration per scene  -> output/audio/
+4. `image_generator`  - ComfyUI still per scene         -> output/images/
+5. `video_assembler`  - FFmpeg stitch in scene order    -> output/final_videos/
 6. `uploader`         - publish the final video to YouTube
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

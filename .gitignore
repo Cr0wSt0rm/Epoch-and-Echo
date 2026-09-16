@@ -8,6 +8,7 @@ __pycache__/
 .venv/
 venv/
 .pytest_cache/
+build/
 
 # Generated pipeline artifacts (keep the folder skeleton via .gitkeep)
 output/audio/*

@@ -1,0 +1,18 @@
+[project]
+name = "epoch-and-echo"
+version = "0.2.0"
+description = "Automated history video pipeline: Cursor-authored script -> ElevenLabs audio -> ComfyUI images -> FFmpeg video."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.7,<3",
+    "requests>=2.32,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
