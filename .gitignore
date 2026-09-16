@@ -1,0 +1,24 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+build/
+
+# Generated pipeline artifacts (keep the folder skeleton via .gitkeep)
+output/audio/*
+output/images/*
+output/final_videos/*
+!output/audio/.gitkeep
+!output/images/.gitkeep
+!output/final_videos/.gitkeep
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

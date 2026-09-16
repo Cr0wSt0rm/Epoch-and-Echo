@@ -1,0 +1,31 @@
+{
+  "topic": {
+    "title": "The Fall of Constantinople",
+    "summary": "The fifty-three day Ottoman siege that ended the Byzantine Empire on 29 May 1453.",
+    "era": "Late Middle Ages, 1453",
+    "sources": [
+      "Steven Runciman, The Fall of Constantinople 1453",
+      "Roger Crowley, 1453: The Holy War for Constantinople"
+    ]
+  },
+  "title": "The Night the Walls Fell: Constantinople, 1453",
+  "description": "For a thousand years the walls held. Then, in the dark before dawn on 29 May 1453, a single forgotten gate changed the fate of two empires.",
+  "tags": ["history", "constantinople", "byzantine empire", "ottoman empire", "1453", "siege"],
+  "scenes": [
+    {
+      "index": 0,
+      "narration": "For eleven hundred years, no army had broken these walls. Not the Persians. Not the Arabs. Not the Bulgars, who once camped so close their fires lit the ramparts. And yet, on a cold April morning in 1453, the watchmen on the Theodosian Wall saw something they had never seen before. Not an army. A city. Eighty thousand men, moving in silence toward the greatest fortress on Earth.",
+      "image_prompt": "Byzantine sentries on the towering Theodosian Walls of Constantinople at dawn, gazing out at an endless Ottoman encampment stretching to the horizon, thin lines of smoke rising, fog over the Thracian plain"
+    },
+    {
+      "index": 1,
+      "narration": "The Sultan was twenty-one years old. Mehmed the Second had brought with him something no besieger of this city had ever owned. A cannon so heavy that sixty oxen dragged it from Edirne. When it fired, the sound carried for miles. Inside the city, women fell to their knees in the churches. And each stone ball that struck the wall asked the same quiet question. How many more nights could it stand?",
+      "image_prompt": "A colossal bronze siege cannon firing at night, the flash illuminating Ottoman gunners and a cracked stretch of Constantinople's triple wall, dust and stone fragments suspended in the air"
+    },
+    {
+      "index": 2,
+      "narration": "On the fifty-third night, the final assault began. The defenders held the breach, hour after hour, until it seemed they might hold forever. Then a soldier looked back toward the city and saw Ottoman banners flying from a tower behind him. Someone had left a small gate open. The Kerkoporta. To this day, no one knows who. Only that by sunrise, the last Roman emperor had vanished into the fighting, and was never seen again.",
+      "image_prompt": "A small, half-open postern gate in the shadow of massive stone walls at the first grey light of dawn, Ottoman banners visible on a tower above, a lone Byzantine soldier turning in horror"
+    }
+  ]
+}
