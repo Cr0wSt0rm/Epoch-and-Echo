@@ -1,0 +1,4 @@
+{
+  "name": "Epoch & Echo video pipeline",
+  "install": "bash .cursor/install.sh"
+}
