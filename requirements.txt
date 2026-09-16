@@ -1,0 +1,4 @@
+# Runtime dependencies for the Epoch & Echo video pipeline.
+# System dependency: ffmpeg (provides ffmpeg + ffprobe). Installed via apt in .cursor/environment.json.
+Pillow>=10.0
+PyYAML>=6.0

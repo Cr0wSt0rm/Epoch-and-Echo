@@ -1,0 +1,14 @@
+# Example episode recipe for the Epoch & Echo pipeline.
+# Run with:  epoch-echo build --config examples/episode.yaml --demo
+title: "The Library of Alexandria"
+subtitle: "How the ancient world's knowledge was lost"
+description: >
+  A short journey through the rise and fall of the greatest library
+  of the ancient world.
+tags:
+  - epoch and echo
+  - history
+  - alexandria
+intro_seconds: 2.0
+outro_seconds: 2.0
+output_dir: out
