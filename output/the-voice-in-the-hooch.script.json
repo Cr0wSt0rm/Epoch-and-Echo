@@ -37,7 +37,7 @@
       "role": "hannah_radio",
       "voice_name": "Hannah radio - thin female, careful English, slightly too calm",
       "voice_id_env": "ELEVENLABS_HANNAH_VOICE_ID",
-      "default_voice_id": "21m00Tcm4TlvDq8ikWAM",
+      "default_voice_id": "EXAVITQu4vr4xnSDxMaL",
       "model_id": "eleven_multilingual_v2",
       "output_format": "mp3_44100_128",
       "stability": 0.85,

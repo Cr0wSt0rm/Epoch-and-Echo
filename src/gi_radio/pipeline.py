@@ -23,15 +23,20 @@ class PipelineConfig(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     build_dir: Path
-    placeholder_assets: bool = Field(
-        default=False,
-        description="Generate silent tones and flat frames instead of calling ElevenLabs/ComfyUI.",
+    placeholder_audio: bool = Field(
+        default=False, description="Generate tones sized to the narration instead of calling ElevenLabs."
+    )
+    placeholder_images: bool = Field(
+        default=False, description="Generate flat frames instead of calling ComfyUI."
     )
     duration_scale: float = Field(
         default=1.0,
         gt=0.0,
         le=1.0,
-        description="Preview shrink factor applied to scripted durations (placeholder mode only).",
+        description="Preview shrink factor applied to scripted durations (placeholder audio only).",
+    )
+    preset: str | None = Field(
+        default=None, description="Override the x264 preset from RenderSettings (e.g. veryfast for drafts)."
     )
     scene_ids: list[str] | None = Field(
         default=None, description="Restrict the run to these scenes, in script order."
@@ -71,18 +76,20 @@ class Pipeline:
         audio: AudioGenerator | None = None,
         images: ImageGenerator | None = None,
     ) -> None:
+        if config.preset:
+            script = script.model_copy(update={"render": script.render.model_copy(update={"preset": config.preset})})
         self.script = script
         self.config = config
         if audio is None:
             audio = (
                 PlaceholderAudioGenerator(config.duration_scale, config.ffmpeg)
-                if config.placeholder_assets
+                if config.placeholder_audio
                 else ElevenLabsAudioGenerator()
             )
         if images is None:
             images = (
                 PlaceholderImageGenerator(config.ffmpeg)
-                if config.placeholder_assets
+                if config.placeholder_images
                 else ComfyUIImageGenerator()
             )
         self.audio = audio
@@ -103,7 +110,7 @@ class Pipeline:
 
     def clip_duration(self, scene: Scene, audio_seconds: float) -> float:
         scripted = scene.duration_seconds * (
-            self.config.duration_scale if self.config.placeholder_assets else 1.0
+            self.config.duration_scale if self.config.placeholder_audio else 1.0
         )
         return round(max(scripted, audio_seconds + self.script.render.audio_tail_hold_seconds), 3)
 

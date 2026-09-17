@@ -16,7 +16,7 @@ _One American kid, one year in Tay Ninh, and a woman in Hanoi who says his frien
 
 ### hannah_radio
 
-- ElevenLabs voice: `Hannah radio - thin female, careful English, slightly too calm` (`$ELEVENLABS_HANNAH_VOICE_ID`, default `21m00Tcm4TlvDq8ikWAM`)
+- ElevenLabs voice: `Hannah radio - thin female, careful English, slightly too calm` (`$ELEVENLABS_HANNAH_VOICE_ID`, default `EXAVITQu4vr4xnSDxMaL`)
 - Model `eleven_multilingual_v2`, stability 0.85, similarity 0.65, style 0.05, speed 0.9, paragraph break 1.8s
 - Direction: Young woman, thin and even, English almost perfect with a schoolroom care in every consonant. Slightly too calm. Never threatening in tone; the threat is in the words and the pauses. Reads names like a teacher taking attendance. The radio band-pass, compression and hiss are added in FFmpeg, not here, so record her clean and close.
 

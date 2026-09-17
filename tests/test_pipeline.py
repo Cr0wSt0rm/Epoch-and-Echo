@@ -68,7 +68,8 @@ def test_placeholder_render_end_to_end(tmp_path):
     script = get_script()
     config = PipelineConfig(
         build_dir=tmp_path,
-        placeholder_assets=True,
+        placeholder_audio=True,
+        placeholder_images=True,
         duration_scale=0.05,
         scene_ids=["S07", "S08", "S09"],
     )

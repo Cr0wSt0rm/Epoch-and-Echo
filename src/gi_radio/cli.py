@@ -1,21 +1,40 @@
 """Command line entry points.
 
   python -m gi_radio validate
+  python -m gi_radio check                      # verify ElevenLabs + ComfyUI credentials, spend nothing
   python -m gi_radio export --json output/the-voice-in-the-hooch.script.json --markdown output/...md
   python -m gi_radio plan --build-dir build
-  python -m gi_radio render --build-dir build [--placeholder --duration-scale 0.05] [--scenes S01 S08]
+  python -m gi_radio render --build-dir build [--placeholder-audio --placeholder-images --duration-scale 0.05]
+                            [--scenes S01 S08] [--preset veryfast]
+
+Secrets are read from the environment; a `.env` in the working directory is loaded
+first without overriding variables that are already set.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
 from .pipeline import Pipeline, PipelineConfig
 from .schema import VideoScript, speech_seconds
 from .script import get_script
+
+
+def load_dotenv(path: Path = Path(".env")) -> None:
+    if not path.is_file():
+        return
+    for raw in path.read_text().splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key, value = key.strip(), value.strip().strip('"').strip("'")
+        if key and value and key not in os.environ:
+            os.environ[key] = value
 
 
 def script_to_markdown(script: VideoScript) -> str:
@@ -115,13 +134,57 @@ def cmd_plan(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_check(_: argparse.Namespace) -> int:
+    """Round-trip both services with read-only calls; no characters or credits are spent."""
+
+    import requests
+
+    from .images import ComfyUIError, ComfyUIImageGenerator
+
+    script = get_script()
+    ok = True
+
+    key = os.environ.get("ELEVENLABS_API_KEY")
+    if not key:
+        print("ElevenLabs: ELEVENLABS_API_KEY not set")
+        ok = False
+    else:
+        sub = requests.get("https://api.elevenlabs.io/v1/user/subscription", headers={"xi-api-key": key}, timeout=30)
+        if sub.ok:
+            j = sub.json()
+            print(f"ElevenLabs: ok, tier={j.get('tier')} characters "
+                  f"{j.get('character_count')}/{j.get('character_limit')} used")
+            voices = requests.get("https://api.elevenlabs.io/v1/voices", headers={"xi-api-key": key}, timeout=30)
+            available = {v["voice_id"]: v["name"] for v in voices.json().get("voices", [])} if voices.ok else {}
+            for role, voice in script.voices.items():
+                vid = os.environ.get(voice.voice_id_env) or voice.default_voice_id
+                name = available.get(vid)
+                print(f"  {role.value:12s} voice {vid} -> {name or 'NOT in this account (premade ids may still work)'}")
+        else:
+            print(f"ElevenLabs: HTTP {sub.status_code} {sub.text[:200]}")
+            ok = False
+
+    try:
+        comfy = ComfyUIImageGenerator()
+        info = comfy.check_auth()
+        who = info.get("email") or info.get("username") or info.get("system", {}).get("comfyui_version") or "ok"
+        print(f"ComfyUI: ok at {comfy.base_url} ({'cloud' if comfy.is_cloud else 'local'}), {who}; "
+              f"checkpoint {comfy.checkpoint}")
+    except (ComfyUIError, requests.RequestException) as exc:
+        print(f"ComfyUI: {exc}")
+        ok = False
+    return 0 if ok else 1
+
+
 def cmd_render(args: argparse.Namespace) -> int:
     config = PipelineConfig(
         build_dir=Path(args.build_dir),
-        placeholder_assets=args.placeholder,
+        placeholder_audio=args.placeholder or args.placeholder_audio,
+        placeholder_images=args.placeholder or args.placeholder_images,
         duration_scale=args.duration_scale,
         scene_ids=args.scenes,
         skip_existing=not args.force,
+        preset=args.preset,
     )
     manifest = Pipeline(get_script(), config).run(render=not args.no_render)
     for entry in manifest.scenes:
@@ -138,6 +201,7 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("validate").set_defaults(func=cmd_validate)
+    sub.add_parser("check").set_defaults(func=cmd_check)
 
     export = sub.add_parser("export")
     export.add_argument("--json")
@@ -151,14 +215,18 @@ def main(argv: list[str] | None = None) -> int:
 
     render = sub.add_parser("render")
     render.add_argument("--build-dir", default="build")
-    render.add_argument("--placeholder", action="store_true")
+    render.add_argument("--placeholder", action="store_true", help="placeholder audio and images")
+    render.add_argument("--placeholder-audio", action="store_true", help="skip ElevenLabs, use tones")
+    render.add_argument("--placeholder-images", action="store_true", help="skip ComfyUI, use flat frames")
     render.add_argument("--duration-scale", type=float, default=1.0)
     render.add_argument("--scenes", nargs="+")
     render.add_argument("--force", action="store_true")
+    render.add_argument("--preset", help="x264 preset override, e.g. veryfast")
     render.add_argument("--no-render", action="store_true", help="generate assets and plan only")
     render.set_defaults(func=cmd_render)
 
     args = parser.parse_args(argv)
+    load_dotenv()
     return args.func(args)
 
 

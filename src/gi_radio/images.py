@@ -1,4 +1,9 @@
-"""ComfyUI image generation: one prompt -> one still per scene."""
+"""ComfyUI image generation: one prompt -> one still per scene.
+
+Works against a local ComfyUI server (COMFYUI_URL, no auth) or Comfy Cloud
+(COMFYUI_API_KEY, X-API-Key header, https://cloud.comfy.org). Both expose the
+same /api/prompt and /api/view shapes; only job polling differs.
+"""
 
 from __future__ import annotations
 
@@ -16,7 +21,20 @@ import requests
 from .schema import RenderSettings, Scene
 from .script import NEGATIVE_PROMPT
 
-DEFAULT_COMFYUI_URL = "http://127.0.0.1:8188"
+DEFAULT_LOCAL_URL = "http://127.0.0.1:8188"
+COMFY_CLOUD_URL = "https://cloud.comfy.org"
+DEFAULT_CHECKPOINT = "sd_xl_base_1.0.safetensors"
+
+_STATUS_HELP = {
+    401: "Comfy rejected the API key. Create one at https://platform.comfy.org/profile/api-keys "
+         "and set COMFYUI_API_KEY. Cloud API access needs a Standard, Creator or Pro subscription.",
+    402: "Comfy Cloud reports insufficient credits.",
+    429: "Comfy Cloud subscription inactive or queue full.",
+}
+
+
+class ComfyUIError(RuntimeError):
+    pass
 
 
 def build_workflow(
@@ -93,64 +111,101 @@ class ComfyUIImageGenerator:
     def __init__(
         self,
         base_url: str | None = None,
+        api_key: str | None = None,
         checkpoint: str | None = None,
         poll_seconds: float = 2.0,
         timeout_seconds: float = 900.0,
     ) -> None:
-        self.base_url = (base_url or os.environ.get("COMFYUI_URL") or DEFAULT_COMFYUI_URL).rstrip("/")
-        self.checkpoint = checkpoint or os.environ.get("COMFYUI_CHECKPOINT", "sd_xl_base_1.0.safetensors")
+        self.api_key = api_key or os.environ.get("COMFYUI_API_KEY") or None
+        url = base_url or os.environ.get("COMFYUI_URL") or (COMFY_CLOUD_URL if self.api_key else DEFAULT_LOCAL_URL)
+        self.base_url = url.rstrip("/")
+        self.is_cloud = "comfy.org" in self.base_url
+        if self.is_cloud and not self.api_key:
+            raise ComfyUIError("Comfy Cloud needs COMFYUI_API_KEY")
+        self.checkpoint = checkpoint or os.environ.get("COMFYUI_CHECKPOINT") or DEFAULT_CHECKPOINT
         self.poll_seconds = poll_seconds
         self.timeout_seconds = timeout_seconds
         self.client_id = str(uuid.uuid4())
+        self.session = requests.Session()
+        if self.api_key:
+            self.session.headers["X-API-Key"] = self.api_key
+
+    def _check(self, response: requests.Response, what: str) -> requests.Response:
+        if response.ok:
+            return response
+        hint = _STATUS_HELP.get(response.status_code, "")
+        raise ComfyUIError(f"{what} failed with HTTP {response.status_code}: {response.text[:300]} {hint}".strip())
+
+    def check_auth(self) -> dict[str, Any]:
+        """Cheap round trip that proves the key/server is usable before spending anything."""
+
+        path = "/api/user" if self.is_cloud else "/api/system_stats"
+        return self._check(self.session.get(f"{self.base_url}{path}", timeout=60), "auth check").json()
 
     def queue_prompt(self, workflow: dict[str, Any]) -> str:
-        response = requests.post(
-            f"{self.base_url}/prompt",
-            json={"prompt": workflow, "client_id": self.client_id},
-            timeout=60,
+        payload: dict[str, Any] = {"prompt": workflow, "client_id": self.client_id}
+        response = self._check(
+            self.session.post(f"{self.base_url}/api/prompt", json=payload, timeout=120), "queue prompt"
         )
-        response.raise_for_status()
-        return response.json()["prompt_id"]
+        body = response.json()
+        if body.get("error"):
+            raise ComfyUIError(f"ComfyUI rejected workflow: {json.dumps(body)[:600]}")
+        return body["prompt_id"]
 
-    def wait_for_history(self, prompt_id: str) -> dict[str, Any]:
+    def wait_for_outputs(self, prompt_id: str) -> dict[str, Any]:
         deadline = time.monotonic() + self.timeout_seconds
         while time.monotonic() < deadline:
-            response = requests.get(f"{self.base_url}/history/{prompt_id}", timeout=60)
-            response.raise_for_status()
-            history = response.json()
-            if prompt_id in history:
-                entry = history[prompt_id]
-                status = entry.get("status", {})
-                if status.get("status_str") == "error":
-                    raise RuntimeError(f"ComfyUI failed prompt {prompt_id}: {json.dumps(status)[:500]}")
-                if entry.get("outputs"):
-                    return entry
+            if self.is_cloud:
+                status = self._check(
+                    self.session.get(f"{self.base_url}/api/job/{prompt_id}/status", timeout=60), "job status"
+                ).json().get("status")
+                if status == "completed":
+                    job = self._check(
+                        self.session.get(f"{self.base_url}/api/jobs/{prompt_id}", timeout=60), "job detail"
+                    ).json()
+                    return job.get("outputs") or {}
+                if status in ("failed", "cancelled"):
+                    job = self.session.get(f"{self.base_url}/api/jobs/{prompt_id}", timeout=60).json()
+                    raise ComfyUIError(f"Comfy Cloud job {status}: {json.dumps(job.get('execution_error'))[:600]}")
+            else:
+                history = self._check(
+                    self.session.get(f"{self.base_url}/api/history/{prompt_id}", timeout=60), "history"
+                ).json()
+                entry = history.get(prompt_id)
+                if entry:
+                    status = entry.get("status", {})
+                    if status.get("status_str") == "error":
+                        raise ComfyUIError(f"ComfyUI failed prompt {prompt_id}: {json.dumps(status)[:600]}")
+                    if entry.get("outputs"):
+                        return entry["outputs"]
             time.sleep(self.poll_seconds)
         raise TimeoutError(f"ComfyUI prompt {prompt_id} did not finish in {self.timeout_seconds}s")
 
-    def download_first_image(self, history_entry: dict[str, Any], out_path: Path) -> Path:
-        for node_output in history_entry["outputs"].values():
+    def download_first_image(self, outputs: dict[str, Any], out_path: Path) -> Path:
+        for node_output in outputs.values():
             for image in node_output.get("images", []):
-                response = requests.get(
-                    f"{self.base_url}/view",
-                    params={
-                        "filename": image["filename"],
-                        "subfolder": image.get("subfolder", ""),
-                        "type": image.get("type", "output"),
-                    },
-                    timeout=120,
+                params = {
+                    "filename": image["filename"],
+                    "subfolder": image.get("subfolder", ""),
+                    "type": image.get("type", "output"),
+                }
+                response = self.session.get(
+                    f"{self.base_url}/api/view", params=params, timeout=120, allow_redirects=False
                 )
-                response.raise_for_status()
+                if response.status_code in (301, 302, 303, 307, 308):
+                    # Cloud hands back a signed storage URL; fetch it without the API key.
+                    response = requests.get(response.headers["location"], timeout=300)
+                self._check(response, "download image")
                 out_path.parent.mkdir(parents=True, exist_ok=True)
                 out_path.write_bytes(response.content)
                 return out_path
-        raise RuntimeError("ComfyUI history contained no images")
+        raise ComfyUIError("ComfyUI outputs contained no images")
 
     def generate(self, scene: Scene, render: RenderSettings, out_path: Path) -> Path:
         workflow = build_workflow(scene, render, checkpoint=self.checkpoint, seed=scene_seed(scene))
         prompt_id = self.queue_prompt(workflow)
-        entry = self.wait_for_history(prompt_id)
-        return self.download_first_image(entry, out_path)
+        outputs = self.wait_for_outputs(prompt_id)
+        return self.download_first_image(outputs, out_path)
 
 
 class PlaceholderImageGenerator:
