@@ -29,7 +29,7 @@
       "similarity_boost": 0.8,
       "style": 0.18,
       "use_speaker_boost": true,
-      "speed": 0.88,
+      "speed": 0.8,
       "paragraph_break_seconds": 1.4,
       "performance_notes": "Mature American male, mid-forties to fifties. Low register, dry, tired. Never pushes. Speaks as if telling it once, late, to a single listener in a dark room with a radio hissing nearby. Short sentences land and stop. Let paragraph breaks be real silence. No announcer polish, no documentary lift at the end of sentences. Quoted GI dialogue stays flat and quiet, not performed."
     },
@@ -44,8 +44,8 @@
       "similarity_boost": 0.65,
       "style": 0.05,
       "use_speaker_boost": false,
-      "speed": 0.9,
-      "paragraph_break_seconds": 1.8,
+      "speed": 0.78,
+      "paragraph_break_seconds": 2.0,
       "performance_notes": "Young woman, thin and even, English almost perfect with a schoolroom care in every consonant. Slightly too calm. Never threatening in tone; the threat is in the words and the pauses. Reads names like a teacher taking attendance. The radio band-pass, compression and hiss are added in FFmpeg, not here, so record her clean and close."
     }
   },

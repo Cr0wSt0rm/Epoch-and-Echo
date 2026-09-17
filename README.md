@@ -33,27 +33,42 @@ and the Pydantic models enforce that shape before any API is called.
 ```bash
 python -m venv .venv && . .venv/bin/activate
 pip install -e ".[dev]"
-cp .env.example .env   # fill in ELEVENLABS_API_KEY, COMFYUI_URL
+cp .env.example .env   # fill in the keys; the CLI loads .env automatically (never committed)
 ```
 
 FFmpeg 6+ with `libx264`, `xfade`, `zoompan`, `anoisesrc` must be on `PATH`.
+
+Credentials (environment variables, or `.env` in the working directory):
+
+| Variable | Purpose |
+| --- | --- |
+| `ELEVENLABS_API_KEY` | ElevenLabs key (profile -> API Keys) |
+| `ELEVENLABS_NARRATOR_VOICE_ID`, `ELEVENLABS_HANNAH_VOICE_ID` | Optional voice overrides (defaults: Bill, Sarah) |
+| `COMFYUI_URL` | Local ComfyUI server, e.g. `http://127.0.0.1:8188` |
+| `COMFYUI_API_KEY` | Comfy Cloud key from platform.comfy.org; selects `https://cloud.comfy.org` when `COMFYUI_URL` is empty |
+| `COMFYUI_CHECKPOINT` | Checkpoint name present on the target server (default `sd_xl_base_1.0.safetensors`) |
+
+Run `python -m gi_radio check` after filling them in: it verifies both services with read-only calls and spends nothing.
 
 ### Commands
 
 ```bash
 python -m gi_radio validate                                   # schema check + per-scene table
+python -m gi_radio check                                      # verify ElevenLabs + ComfyUI credentials
 python -m gi_radio export --json output/the-voice-in-the-hooch.script.json \
                           --markdown output/the-voice-in-the-hooch.md
 python -m gi_radio plan --build-dir build --out build/plan.json   # FFmpeg plan with scripted durations
 python -m gi_radio render --build-dir build                    # real ElevenLabs + ComfyUI + FFmpeg run
-python -m gi_radio render --build-dir build --placeholder --duration-scale 0.05   # offline dry run
-python -m gi_radio render --build-dir build --scenes S19 S20 S21                  # subset
+python -m gi_radio render --build-dir build --placeholder-images  # real narration, flat frames (no ComfyUI)
+python -m gi_radio render --build-dir build --placeholder --duration-scale 0.05   # fully offline dry run
+python -m gi_radio render --build-dir build --scenes S19 S20 S21 --preset veryfast # subset, fast encode
 pytest
 ```
 
 `render` writes `build/audio/<scene>.mp3`, `build/images/<scene>.png`, `build/clips/<scene>.mp4`,
 `build/manifest.json` and the final `build/the-voice-in-the-hooch.mp4`. Existing assets are reused
-unless `--force` is passed, so a failed ComfyUI call can be resumed without re-spending ElevenLabs credits.
+unless `--force` is passed, so a failed ComfyUI call can be resumed without re-spending ElevenLabs credits,
+and `--placeholder-images` can be swapped for a real ComfyUI run later while keeping the narration.
 
 ### Schema guarantees
 

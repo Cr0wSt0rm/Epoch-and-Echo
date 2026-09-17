@@ -86,7 +86,7 @@ VOICES: dict[VoiceRole, VoiceSettings] = {
         similarity_boost=0.80,
         style=0.18,
         use_speaker_boost=True,
-        speed=0.88,
+        speed=0.80,
         paragraph_break_seconds=1.4,
         performance_notes=(
             "Mature American male, mid-forties to fifties. Low register, dry, tired. "
@@ -106,8 +106,8 @@ VOICES: dict[VoiceRole, VoiceSettings] = {
         similarity_boost=0.65,
         style=0.05,
         use_speaker_boost=False,
-        speed=0.90,
-        paragraph_break_seconds=1.8,
+        speed=0.78,
+        paragraph_break_seconds=2.0,
         performance_notes=(
             "Young woman, thin and even, English almost perfect with a schoolroom care in "
             "every consonant. Slightly too calm. Never threatening in tone; the threat is in "

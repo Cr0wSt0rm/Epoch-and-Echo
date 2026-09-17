@@ -11,13 +11,13 @@ _One American kid, one year in Tay Ninh, and a woman in Hanoi who says his frien
 ### narrator
 
 - ElevenLabs voice: `Narrator - mature American male, low and tired` (`$ELEVENLABS_NARRATOR_VOICE_ID`, default `pqHfZKP75CvOlQylNhV4`)
-- Model `eleven_multilingual_v2`, stability 0.62, similarity 0.8, style 0.18, speed 0.88, paragraph break 1.4s
+- Model `eleven_multilingual_v2`, stability 0.62, similarity 0.8, style 0.18, speed 0.8, paragraph break 1.4s
 - Direction: Mature American male, mid-forties to fifties. Low register, dry, tired. Never pushes. Speaks as if telling it once, late, to a single listener in a dark room with a radio hissing nearby. Short sentences land and stop. Let paragraph breaks be real silence. No announcer polish, no documentary lift at the end of sentences. Quoted GI dialogue stays flat and quiet, not performed.
 
 ### hannah_radio
 
 - ElevenLabs voice: `Hannah radio - thin female, careful English, slightly too calm` (`$ELEVENLABS_HANNAH_VOICE_ID`, default `EXAVITQu4vr4xnSDxMaL`)
-- Model `eleven_multilingual_v2`, stability 0.85, similarity 0.65, style 0.05, speed 0.9, paragraph break 1.8s
+- Model `eleven_multilingual_v2`, stability 0.85, similarity 0.65, style 0.05, speed 0.78, paragraph break 2.0s
 - Direction: Young woman, thin and even, English almost perfect with a schoolroom care in every consonant. Slightly too calm. Never threatening in tone; the threat is in the words and the pauses. Reads names like a teacher taking attendance. The radio band-pass, compression and hiss are added in FFmpeg, not here, so record her clean and close.
 
 ## Color grade
