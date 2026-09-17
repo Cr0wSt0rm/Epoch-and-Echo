@@ -184,7 +184,7 @@ That is how you know he has decided to learn your name.
 
 > RADIO: We have been waiting for you.
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Night interior of a dark hooch. A small brown transistor radio standing on an upturned ammunition crate, its lit dial glowing, the glow falling on wet plywood, mosquito netting and a hanging poncho in deep shadow, one bare foot at the edge of the light. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Night interior of a sandbagged hooch, no daylight. A small brown 1960s transistor radio with a lit dial sitting on a wooden ammunition crate, the dial the only light, wet plywood floor, mosquito netting and a hanging poncho in deep shadow, one bare foot at the edge of the light. Painterly brushwork, film grain.`
 
 ### S09 - radio_interlude - narrator (89 words, 47s, starts 07:52)
 

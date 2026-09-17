@@ -339,9 +339,9 @@ I am told there are new men with the Twenty-Fifth Division at Tay Ninh. Welcome 
 We have been waiting for you.
 """,
         "Hooch radio in the dark, dial glow throwing cold blue light across a wet plywood floor",
-        "Night interior of a dark hooch. A small brown transistor radio standing on an upturned ammunition "
-        "crate, its lit dial glowing, the glow falling on wet plywood, mosquito netting and a hanging poncho "
-        "in deep shadow, one bare foot at the edge of the light.",
+        "Night interior of a sandbagged hooch, no daylight. A small brown 1960s transistor radio with a lit "
+        "dial sitting on a wooden ammunition crate, the dial the only light, wet plywood floor, mosquito "
+        "netting and a hanging poncho in deep shadow, one bare foot at the edge of the light.",
         ["radio static bed, AM warble", "rain on tin, light", "a cot creaking", "mosquito whine"],
         hold=5.0,
         transition=Transition.RADIO_DISSOLVE,

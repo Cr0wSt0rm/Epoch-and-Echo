@@ -98,9 +98,13 @@ def build_workflow(
 
 
 def scene_seed(scene: Scene) -> int:
-    """Deterministic per-scene seed so re-runs reproduce the same frame."""
+    """Deterministic seed so re-runs reproduce the same frame.
 
-    return zlib.crc32(scene.scene_id.encode()) & 0x7FFFFFFF
+    Keyed on the prompt as well as the scene id: with a fixed seed SDXL keeps
+    the same composition through rewordings, so a prompt fix needs a new draw.
+    """
+
+    return zlib.crc32(f"{scene.scene_id}|{scene.comfyui_image_prompt}".encode()) & 0x7FFFFFFF
 
 
 class ImageGenerator(Protocol):
