@@ -138,3 +138,40 @@ def test_v3_generate_polls_progress_and_reports_codes(monkeypatch, tmp_path, sce
     })
     with pytest.raises(DiffusError, match="insufficient funds"):
         failing.generate(scene, render, tmp_path / "x.png")
+
+
+def test_fal_status_poll_survives_transient_timeouts(monkeypatch, tmp_path, scene_and_render):
+    scene, render = scene_and_render
+    gen = DiffusImageGenerator(api_key="pk_test", mode="fal", model="diffus-ai/x", poll_seconds=0)
+    attempts = iter([diffus_mod.requests.ReadTimeout("slow"), FakeResponse(502, {"detail": "bad gateway"}), "ok"])
+
+    def status(url, kw):
+        step = next(attempts)
+        if isinstance(step, Exception):
+            raise step
+        return step if isinstance(step, FakeResponse) else FakeResponse(200, {"status": "COMPLETED"})
+
+    gen.session = FakeSession({
+        ("POST", "queue.api.diffus.me/diffus-ai/x"): FakeResponse(
+            200, {"request_id": "r1", "status_url": "https://q/x/status", "response_url": "https://q/x/result"}),
+        ("GET", "/x/status"): status,
+        ("GET", "/x/result"): FakeResponse(200, {"results": [{"url": "https://cdn.example/out.png"}]}),
+    })
+    monkeypatch.setattr(diffus_mod.requests, "get", lambda url, **kw: FakeResponse(200, None, PNG, {}))
+    monkeypatch.setattr(diffus_mod.time, "sleep", lambda s: None)
+
+    assert gen.generate(scene, render, tmp_path / "S01.png").read_bytes() == PNG
+    assert sum(1 for c in gen.session.calls if "/x/status" in c[1]) == 3
+
+
+def test_fal_failed_job_raises_instead_of_polling_forever(monkeypatch, tmp_path, scene_and_render):
+    scene, render = scene_and_render
+    gen = DiffusImageGenerator(api_key="pk_test", mode="fal", model="diffus-ai/x", poll_seconds=0)
+    gen.session = FakeSession({
+        ("POST", "queue.api.diffus.me/diffus-ai/x"): FakeResponse(
+            200, {"request_id": "r1", "status_url": "https://q/x/status", "response_url": "https://q/x/result"}),
+        ("GET", "/x/status"): FakeResponse(200, {"status": "FAILED", "error": "NSFW filter"}),
+    })
+    monkeypatch.setattr(diffus_mod.time, "sleep", lambda s: None)
+    with pytest.raises(DiffusError, match="FAILED"):
+        gen.generate(scene, render, tmp_path / "S01.png")

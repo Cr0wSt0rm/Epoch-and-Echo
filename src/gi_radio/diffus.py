@@ -89,9 +89,32 @@ class DiffusImageGenerator:
             return response
         raise DiffusError(f"Diffus {what} failed with HTTP {response.status_code}: {response.text[:300]}")
 
+    def _get_retrying(
+        self, url: str, what: str, *, attempts: int = 6, authenticated: bool = True, **kwargs: Any
+    ) -> requests.Response:
+        """GET with retries on transient failures.
+
+        Only idempotent reads go through here (status polls, results, downloads);
+        a retried submit could spend a second credit for the same still. Downloads
+        hit a third-party CDN, so they go out without the passkey header.
+        """
+
+        getter = self.session.get if authenticated else requests.get
+        last: Exception | None = None
+        for attempt in range(attempts):
+            try:
+                response = getter(url, **kwargs)
+            except (requests.ConnectionError, requests.Timeout) as exc:
+                last = exc
+            else:
+                if response.status_code < 500:
+                    return self._check(response, what)
+                last = DiffusError(f"Diffus {what} returned HTTP {response.status_code}")
+            time.sleep(min(2.0 * 2**attempt, 30.0))
+        raise DiffusError(f"Diffus {what} kept failing after {attempts} attempts: {last}")
+
     def _download(self, url: str, out_path: Path) -> Path:
-        response = requests.get(url, timeout=300)
-        self._check(response, "image download")
+        response = self._get_retrying(url, "image download", authenticated=False, timeout=300)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_bytes(response.content)
         return out_path
@@ -132,13 +155,16 @@ class DiffusImageGenerator:
         status_url, response_url = submitted["status_url"], submitted["response_url"]
         deadline = time.monotonic() + self.timeout_seconds
         while time.monotonic() < deadline:
-            status = self._check(self.session.get(status_url, params={"logs": "0"}, timeout=60), "status").json()
-            if status.get("status") == "COMPLETED":
+            status = self._get_retrying(status_url, "status", params={"logs": "0"}, timeout=60).json()
+            state = status.get("status")
+            if state == "COMPLETED":
                 break
+            if state in ("FAILED", "ERROR", "CANCELLED"):
+                raise DiffusError(f"Diffus job for {scene.scene_id} ended {state}: {str(status)[:300]}")
             time.sleep(self.poll_seconds)
         else:
             raise TimeoutError(f"Diffus job for {scene.scene_id} did not finish in {self.timeout_seconds}s")
-        result = self._check(self.session.get(response_url, timeout=120), "result").json()
+        result = self._get_retrying(response_url, "result", timeout=120).json()
         # Diffus returns {"results": [{"url", "content_type"}]}; fal apps use "images"/"image".
         images = result.get("results") or result.get("images") or result.get("image") or []
         if isinstance(images, dict):
@@ -169,8 +195,8 @@ class DiffusImageGenerator:
         task_id = body["data"]["task_id"]
         deadline = time.monotonic() + self.timeout_seconds
         while time.monotonic() < deadline:
-            progress = self._check(
-                self.session.get(f"{self.base_url}/api/v3/progress", params={"task_id": task_id}, timeout=60), "progress"
+            progress = self._get_retrying(
+                f"{self.base_url}/api/v3/progress", "progress", params={"task_id": task_id}, timeout=60
             ).json()
             if progress.get("code", 0) != 0:
                 raise DiffusError(f"Diffus progress error {progress.get('code')}: {progress.get('msg')}")
