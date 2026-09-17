@@ -31,13 +31,14 @@ NEGATIVE_PROMPT = (
 
 
 def prompt(subject: str) -> str:
-    """Build a ComfyUI positive prompt that always carries the house style."""
+    """Build a positive prompt that always carries the house style.
 
-    return (
-        f"{subject} Vietnam War era 1968, authentic period detail, US Army jungle fatigues, "
-        f"no modern objects, no text. {CINEMATIC_STYLE} Painterly brushwork, deep shadow, "
-        "film grain, wet surfaces, rim light, shallow depth of field."
-    )
+    The style string goes first: SDXL's CLIP encoders see ~77 tokens, and the
+    subjects run 50-70 tokens on their own. Style-first was A/B tested against
+    style-last on Juggernaut XL; style-last produced bright photoreal daylight.
+    """
+
+    return f"{CINEMATIC_STYLE} Vietnam War, 1968. {subject} Painterly brushwork, film grain."
 
 
 B = EmotionalBeat

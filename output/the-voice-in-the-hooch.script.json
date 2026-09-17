@@ -61,7 +61,7 @@
         "rain on tin roof, steady",
         "distant single insect"
       ],
-      "comfyui_image_prompt": "Close view of a battered transistor radio on a wet plywood floor inside a dark sandbagged hooch, the amber-blue dial the only light, a boot and the edge of an ammo-crate cot in shadow, rain streaks on corrugated tin above. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Close view of a battered transistor radio on a wet plywood floor inside a dark sandbagged hooch, the amber-blue dial the only light, a boot and the edge of an ammo-crate cot in shadow, rain streaks on corrugated tin above. Painterly brushwork, film grain.",
       "visual_subject": "Transistor radio on a plywood hooch floor, dial glowing, rain on tin",
       "transition_in": "fade_black",
       "grade_variant": "night_radio",
@@ -80,7 +80,7 @@
         "a paper bag crinkling",
         "a jet spooling up outside"
       ],
-      "comfyui_image_prompt": "A 1968 Midwestern airport terminal at night seen through tall rain-flecked glass, a young soldier in Army khakis with a duffel bag, his mother holding a paper-wrapped sandwich, a father clutching a hat with both hands, a young woman standing slightly apart, their reflections doubled in the glass. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A 1968 Midwestern airport terminal at night seen through tall rain-flecked glass, a young soldier in Army khakis with a duffel bag, his mother holding a paper-wrapped sandwich, a father clutching a hat with both hands, a young woman standing slightly apart, their reflections doubled in the glass. Painterly brushwork, film grain.",
       "visual_subject": "Airport glass at night, a family reflected, a boy in uniform with a duffel",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -99,7 +99,7 @@
         "faint 1968 pop song from a transistor radio",
         "wind"
       ],
-      "comfyui_image_prompt": "A brightly painted yellow chartered airliner under harsh sodium floodlights on a military airfield at night, a long line of young soldiers in khakis climbing the boarding stairs with duffel bags, wet tarmac reflecting the lights, fog at the edges. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A brightly painted yellow chartered airliner under harsh sodium floodlights on a military airfield at night, a long line of young soldiers in khakis climbing the boarding stairs with duffel bags, wet tarmac reflecting the lights, fog at the edges. Painterly brushwork, film grain.",
       "visual_subject": "Bright yellow chartered jet under floodlights at Travis AFB, night, soldiers boarding",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -118,7 +118,7 @@
         "heat shimmer drone",
         "far-off helicopter rotor"
       ],
-      "comfyui_image_prompt": "View from inside an airliner doorway opening onto a blinding, shimmering tropical airfield, heat haze warping the tarmac, a line of gaunt sun-faded soldiers waiting at the foot of the stairs, sandbagged revetments and palm trees in a sick yellow light, smoke on the horizon. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. View from inside an airliner doorway opening onto a blinding, shimmering tropical airfield, heat haze warping the tarmac, a line of gaunt sun-faded soldiers waiting at the foot of the stairs, sandbagged revetments and palm trees in a sick yellow light, smoke on the horizon. Painterly brushwork, film grain.",
       "visual_subject": "Airliner door open onto white heat at Bien Hoa, tarmac shimmer, silhouettes waiting below",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -137,7 +137,7 @@
         "mesh rattling",
         "a distant Huey"
       ],
-      "comfyui_image_prompt": "An olive-drab Army bus with heavy wire mesh over its windows rolling down a red-dust road past tin-roofed barracks and sandbag walls, young faces pressed to the mesh, a burn barrel smoking behind a latrine, overcast sky heavy with coming rain. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. An olive-drab Army bus with heavy wire mesh over its windows rolling down a red-dust road past tin-roofed barracks and sandbag walls, young faces pressed to the mesh, a burn barrel smoking behind a latrine, overcast sky heavy with coming rain. Painterly brushwork, film grain.",
       "visual_subject": "Army bus with wire mesh over the windows on a red dust road, faces behind the mesh",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -156,7 +156,7 @@
         "men's voices low, counting",
         "a zipper"
       ],
-      "comfyui_image_prompt": "Extreme close-up of a sweat-stained camouflage helmet cover with a hand-drawn grid of small boxes in ballpoint, only two crossed out, a cheap pen resting on the brim, a young hand with dirty nails, shallow focus, humid gray light. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Extreme close-up of a sweat-stained camouflage helmet cover with a hand-drawn grid of small boxes in ballpoint, only two crossed out, a cheap pen resting on the brim, a young hand with dirty nails, shallow focus, humid gray light. Painterly brushwork, film grain.",
       "visual_subject": "Helmet cover with a hand-drawn short-timer calendar, ballpoint X marks, a pen",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -175,7 +175,7 @@
         "boots on aluminum deck",
         "wind across the strip"
       ],
-      "comfyui_image_prompt": "The lowered rear ramp of a C-130 transport framing a red-dust airstrip and, far off, a single dark mountain rising alone from a flat green plain under a bruised sky, soldiers on web seats in the shadowed cargo bay, rotor dust drifting. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. The lowered rear ramp of a C-130 transport framing a red-dust airstrip and, far off, a single dark mountain rising alone from a flat green plain under a bruised sky, soldiers on web seats in the shadowed cargo bay, rotor dust drifting. Painterly brushwork, film grain.",
       "visual_subject": "C-130 rear ramp lowering onto red dust, a lone dark mountain on a flat green plain beyond",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -194,7 +194,7 @@
         "a cot creaking",
         "mosquito whine"
       ],
-      "comfyui_image_prompt": "A small transistor radio on an upturned ammunition crate inside a dark hooch, its dial casting a cold blue glow across wet plywood, mosquito netting and a hanging poncho in shadow, one bare foot at the edge of the light. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A small transistor radio on an upturned ammunition crate inside a dark hooch, its dial casting a cold blue glow across wet plywood, mosquito netting and a hanging poncho in shadow, one bare foot at the edge of the light. Painterly brushwork, film grain.",
       "visual_subject": "Hooch radio in the dark, dial glow throwing cold blue light across a wet plywood floor",
       "transition_in": "radio_dissolve",
       "grade_variant": "night_radio",
@@ -213,7 +213,7 @@
         "cot springs",
         "rain"
       ],
-      "comfyui_image_prompt": "Interior of a sandbagged hooch at night lit only by a candle and a radio dial, three young soldiers on cots, one laughing with his head back, one staring hard at the radio, one lying with eyes closed and an arm across his chest, cigarette smoke hanging. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Interior of a sandbagged hooch at night lit only by a candle and a radio dial, three young soldiers on cots, one laughing with his head back, one staring hard at the radio, one lying with eyes closed and an arm across his chest, cigarette smoke hanging. Painterly brushwork, film grain.",
       "visual_subject": "Men in a hooch at night, one laughing, one staring at the radio, one lying still",
       "transition_in": "crossfade",
       "grade_variant": "night_radio",
@@ -232,7 +232,7 @@
         "water dripping off poncho brim",
         "thunder far off"
       ],
-      "comfyui_image_prompt": "A column of soldiers hunched under dripping ponchos wading a flooded rice paddy in a monsoon downpour, rain falling in gray sheets, treeline lost in mist, a soaked letter clutched in one fist, the sky the color of wet slate. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A column of soldiers hunched under dripping ponchos wading a flooded rice paddy in a monsoon downpour, rain falling in gray sheets, treeline lost in mist, a soaked letter clutched in one fist, the sky the color of wet slate. Painterly brushwork, film grain.",
       "visual_subject": "Monsoon over a flooded paddy, grunts hunched under ponchos, rain in sheets",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -251,7 +251,7 @@
         "a lighter clicking",
         "dripping canopy"
       ],
-      "comfyui_image_prompt": "Close view of a soldier's bare pale waterlogged feet beside unlaced jungle boots on muddy ground, a medic's flashlight beam in the humid dusk, a leech on a calf, steam rising off wet fatigues, sick yellow-green light through the canopy. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Close view of a soldier's bare pale waterlogged feet beside unlaced jungle boots on muddy ground, a medic's flashlight beam in the humid dusk, a leech on a calf, steam rising off wet fatigues, sick yellow-green light through the canopy. Painterly brushwork, film grain.",
       "visual_subject": "Wet boots pulled off, pale ruined feet, a medic's flashlight, a leech on a calf",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -270,7 +270,7 @@
         "men shouting names",
         "a paper envelope tearing"
       ],
-      "comfyui_image_prompt": "A UH-1 Huey helicopter settling onto a muddy landing zone in blowing rain, a red canvas mail sack tumbling from the open door, soldiers running bent double toward it through flattened grass, rotor wash flinging water, low gray sky. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A UH-1 Huey helicopter settling onto a muddy landing zone in blowing rain, a red canvas mail sack tumbling from the open door, soldiers running bent double toward it through flattened grass, rotor wash flinging water, low gray sky. Painterly brushwork, film grain.",
       "visual_subject": "A Huey settling onto a wet LZ, a red mail sack thrown out, men running bent over",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -289,7 +289,7 @@
         "rain easing to drips",
         "silence held"
       ],
-      "comfyui_image_prompt": "A young soldier sitting alone on an ammunition crate holding a single page of a letter, helmet in his lap with cigarettes in the band, other soldiers in the background deliberately looking away, sandbags and a dripping poncho shelter, flat overcast light. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A young soldier sitting alone on an ammunition crate holding a single page of a letter, helmet in his lap with cigarettes in the band, other soldiers in the background deliberately looking away, sandbags and a dripping poncho shelter, flat overcast light. Painterly brushwork, film grain.",
       "visual_subject": "A soldier alone on an ammo crate with a one-page letter, others looking away",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -308,7 +308,7 @@
         "a wristwatch ticking, close",
         "a song starting tinny then cut"
       ],
-      "comfyui_image_prompt": "Extreme close-up of a glowing radio dial with its needle on a frequency, cold blue light on a scarred plastic face, a bunker doorway behind streaked with night rain, sandbags black with water. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Extreme close-up of a glowing radio dial with its needle on a frequency, cold blue light on a scarred plastic face, a bunker doorway behind streaked with night rain, sandbags black with water. Painterly brushwork, film grain.",
       "visual_subject": "Radio dial close-up, cold blue glow, rain streaking a bunker doorway behind",
       "transition_in": "radio_dissolve",
       "grade_variant": "night_radio",
@@ -327,7 +327,7 @@
         "a folk song, faint, from the radio",
         "candle guttering"
       ],
-      "comfyui_image_prompt": "Silhouettes of four soldiers gathered around a small radio inside a sandbagged bunker, a single candle and the radio dial the only light, rain visible through the firing slit, cold blue glow on wet faces, deep shadow everywhere else. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Silhouettes of four soldiers gathered around a small radio inside a sandbagged bunker, a single candle and the radio dial the only light, rain visible through the firing slit, cold blue glow on wet faces, deep shadow everywhere else. Painterly brushwork, film grain.",
       "visual_subject": "Silhouetted men around a radio in a bunker, one candle, rain beyond the firing slit",
       "transition_in": "crossfade",
       "grade_variant": "night_radio",
@@ -346,7 +346,7 @@
         "a dog barking far off",
         "a Zippo lid, then flame"
       ],
-      "comfyui_image_prompt": "A lone point man walking a narrow paddy dike at gray dawn, rifle low, a village of thatched roofs in the treeline ahead with a thin column of smoke rising, mist on the water, the rest of the column far behind him, everything the color of mildew. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A lone point man walking a narrow paddy dike at gray dawn, rifle low, a village of thatched roofs in the treeline ahead with a thin column of smoke rising, mist on the water, the rest of the column far behind him, everything the color of mildew. Painterly brushwork, film grain.",
       "visual_subject": "Point man alone on a paddy dike at dawn, village treeline ahead, thatch smoke rising",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -365,7 +365,7 @@
         "a cleaning rod in a barrel",
         "a radio handset squelch"
       ],
-      "comfyui_image_prompt": "Soldiers sitting spread out along a paddy dike in the aftermath of a firefight, rifles across their knees, faces blank, smoke drifting low over the water, spent brass in the mud, a burned treeline behind them, no one speaking. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Soldiers sitting spread out along a paddy dike in the aftermath of a firefight, rifles across their knees, faces blank, smoke drifting low over the water, spent brass in the mud, a burned treeline behind them, no one speaking. Painterly brushwork, film grain.",
       "visual_subject": "Men sitting silent on a paddy dike after a contact, smoke drifting, rifles across knees",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -384,7 +384,7 @@
         "insects at dusk",
         "a page turning"
       ],
-      "comfyui_image_prompt": "Close-up of a helmet cover calendar with half its boxes crossed out in ballpoint, the brim shadowing a nineteen-year-old face gone hard, bruised green jungle light, a canteen cup steaming beside him. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Close-up of a helmet cover calendar with half its boxes crossed out in ballpoint, the brim shadowing a nineteen-year-old face gone hard, bruised green jungle light, a canteen cup steaming beside him. Painterly brushwork, film grain.",
       "visual_subject": "Helmet calendar half crossed out, bruised green light, a boy's face under the brim",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -403,7 +403,7 @@
         "a pen on a clipboard",
         "silence, long"
       ],
-      "comfyui_image_prompt": "A soldier's belongings laid out on a camouflage poncho liner in the mud at dawn, a rifle, a canteen, a small Bible, and on top a sealed letter inside a clear plastic bag, dry, surrounded by the muddy boots of men standing in a silent circle. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A soldier's belongings laid out on a camouflage poncho liner in the mud at dawn, a rifle, a canteen, a small Bible, and on top a sealed letter inside a clear plastic bag, dry, surrounded by the muddy boots of men standing in a silent circle. Painterly brushwork, film grain.",
       "visual_subject": "Gear laid out on a poncho liner in the mud, a letter in a plastic bag on top, boots around it",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -422,7 +422,7 @@
         "rain",
         "no other sound"
       ],
-      "comfyui_image_prompt": "A radio on the floor of a dark bunker throwing cold blue light upward onto the still faces of young soldiers who have stopped moving, a hand frozen above the dial, rain on sandbags outside, everything else swallowed in black. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A radio on the floor of a dark bunker throwing cold blue light upward onto the still faces of young soldiers who have stopped moving, a hand frozen above the dial, rain on sandbags outside, everything else swallowed in black. Painterly brushwork, film grain.",
       "visual_subject": "Radio in the dark, the men's faces half lit blue, nobody moving",
       "transition_in": "radio_dissolve",
       "grade_variant": "night_radio",
@@ -441,7 +441,7 @@
         "a flare popping far off",
         "breath"
       ],
-      "comfyui_image_prompt": "A single young soldier standing bareheaded in night rain outside a sandbagged bunker, his back to the cold blue radio glow spilling from the doorway, shoulders down, the wire and a flare-lit sky beyond, water running off his face. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A single young soldier standing bareheaded in night rain outside a sandbagged bunker, his back to the cold blue radio glow spilling from the doorway, shoulders down, the wire and a flare-lit sky beyond, water running off his face. Painterly brushwork, film grain.",
       "visual_subject": "A lone GI standing outside the bunker in the rain, radio glow behind him in the doorway",
       "transition_in": "crossfade",
       "grade_variant": "night_radio",
@@ -460,7 +460,7 @@
         "a mess tray scraping",
         "a pen on damp paper"
       ],
-      "comfyui_image_prompt": "A muddy firebase at dusk in steady rain, an eight-inch plastic Christmas tree standing on a sandbag wall, a soldier eating from a mess tray with a rifle slung across his back, a 105mm howitzer under a tarp firing in the background, muzzle flash lighting the rain. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A muddy firebase at dusk in steady rain, an eight-inch plastic Christmas tree standing on a sandbag wall, a soldier eating from a mess tray with a rifle slung across his back, a 105mm howitzer under a tarp firing in the background, muzzle flash lighting the rain. Painterly brushwork, film grain.",
       "visual_subject": "Firebase at dusk in rain, a tiny plastic Christmas tree on sandbags, a howitzer beyond",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -479,7 +479,7 @@
         "distant small arms, sporadic",
         "radio playing a Christmas song, tinny"
       ],
-      "comfyui_image_prompt": "Illumination flares drifting under small parachutes above concertina wire at midnight, their harsh light on a dusty perimeter and a soldier's upturned face, faint red tracers on the far horizon, a radio glowing at his feet. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Illumination flares drifting under small parachutes above concertina wire at midnight, their harsh light on a dusty perimeter and a soldier's upturned face, faint red tracers on the far horizon, a radio glowing at his feet. Painterly brushwork, film grain.",
       "visual_subject": "Parachute flares hanging over the wire at midnight, red tracers far off, dust",
       "transition_in": "crossfade",
       "grade_variant": "night_radio",
@@ -498,7 +498,7 @@
         "boots on hard dust",
         "a whistle blown once"
       ],
-      "comfyui_image_prompt": "A sprawling base camp at first light after a rocket attack, black smoke from a burning fuel dump on the horizon, two soldiers carrying a covered stretcher toward a helicopter pad, red dust hanging, the lone mountain dim in the haze. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A sprawling base camp at first light after a rocket attack, black smoke from a burning fuel dump on the horizon, two soldiers carrying a covered stretcher toward a helicopter pad, red dust hanging, the lone mountain dim in the haze. Painterly brushwork, film grain.",
       "visual_subject": "Base camp at dawn after a rocket attack, a burning fuel dump on the horizon, men carrying a stretcher",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -517,7 +517,7 @@
         "a slow breath",
         "rain, distant"
       ],
-      "comfyui_image_prompt": "Extreme close-up of a scratched military wristwatch on a thin sunburned wrist, lit only by the cold blue glow of a radio dial just out of frame, the second hand caught mid-sweep, dark bunker beyond. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Extreme close-up of a scratched military wristwatch on a thin sunburned wrist, lit only by the cold blue glow of a radio dial just out of frame, the second hand caught mid-sweep, dark bunker beyond. Painterly brushwork, film grain.",
       "visual_subject": "A wristwatch on a wrist in cold blue radio light, second hand mid-sweep",
       "transition_in": "radio_dissolve",
       "grade_variant": "night_radio",
@@ -536,7 +536,7 @@
         "distant Huey",
         "boots on a trail, slow"
       ],
-      "comfyui_image_prompt": "A helmet with a nearly complete grid of crossed-out boxes and the word SHORT inked across the cover, resting on a rucksack at the edge of dense jungle, humid haze, a young soldier's hand reaching for it, sick yellow afternoon light. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A helmet with a nearly complete grid of crossed-out boxes and the word SHORT inked across the cover, resting on a rucksack at the edge of dense jungle, humid haze, a young soldier's hand reaching for it, sick yellow afternoon light. Painterly brushwork, film grain.",
       "visual_subject": "Helmet calendar nearly full, SHORT written across the cover, jungle edge behind",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -555,7 +555,7 @@
         "convoy radio chatter, faint",
         "generators at night, later"
       ],
-      "comfyui_image_prompt": "A young soldier riding in the open back of a deuce-and-a-half truck on a red dirt road, duffel between his knees, looking back over his shoulder at a lone dark mountain receding on the plain, dust boiling behind the convoy, storm light. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A young soldier riding in the open back of a deuce-and-a-half truck on a red dirt road, duffel between his knees, looking back over his shoulder at a lone dark mountain receding on the plain, dust boiling behind the convoy, storm light. Painterly brushwork, film grain.",
       "visual_subject": "A GI in the back of a truck on a red road, duffel between his knees, looking back at the lone mountain",
       "transition_in": "crossfade",
       "grade_variant": "day_bruised",
@@ -574,7 +574,7 @@
         "footsteps on wet stairs",
         "fog horn, very distant"
       ],
-      "comfyui_image_prompt": "An airliner door opening onto cold gray predawn fog on a military airfield, thin young men in rumpled khakis descending the stairs with duffel bags, breath visible, floodlights haloed in mist, no one waiting on the empty tarmac. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. An airliner door opening onto cold gray predawn fog on a military airfield, thin young men in rumpled khakis descending the stairs with duffel bags, breath visible, floodlights haloed in mist, no one waiting on the empty tarmac. Painterly brushwork, film grain.",
       "visual_subject": "Airliner door open onto gray fog at Travis, thin men in rumpled khakis coming down the stairs",
       "transition_in": "fade_black",
       "grade_variant": "day_bruised",
@@ -593,7 +593,7 @@
         "a clock in another room",
         "no insects"
       ],
-      "comfyui_image_prompt": "A small-town Ohio bedroom at three in the morning, a young man sitting on the floor with his back against a too-soft bed, one dim lamp, a transistor radio beside him with its dial glowing faint blue, a duffel bag unopened in the corner, curtains still. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A small-town Ohio bedroom at three in the morning, a young man sitting on the floor with his back against a too-soft bed, one dim lamp, a transistor radio beside him with its dial glowing faint blue, a duffel bag unopened in the corner, curtains still. Painterly brushwork, film grain.",
       "visual_subject": "A boy's bedroom in Ohio at 3 a.m., one lamp, a transistor radio on the floor beside him",
       "transition_in": "crossfade",
       "grade_variant": "night_radio",
@@ -612,7 +612,7 @@
         "a lamp hum",
         "then nothing"
       ],
-      "comfyui_image_prompt": "A worn kitchen table under a single hanging lamp at night, an opened envelope with a Mississippi postmark and a folded Army form beside it, a helmet cover with every box crossed out, a dark silent transistor radio, a pen laid down on blank paper. Vietnam War era 1968, authentic period detail, US Army jungle fatigues, no modern objects, no text. Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Painterly brushwork, deep shadow, film grain, wet surfaces, rim light, shallow depth of field.",
+      "comfyui_image_prompt": "Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A worn kitchen table under a single hanging lamp at night, an opened envelope with a Mississippi postmark and a folded Army form beside it, a helmet cover with every box crossed out, a dark silent transistor radio, a pen laid down on blank paper. Painterly brushwork, film grain.",
       "visual_subject": "A kitchen table at night: a returned envelope with an Army form, a finished helmet calendar, a dark radio",
       "transition_in": "fade_black",
       "grade_variant": "night_radio",
