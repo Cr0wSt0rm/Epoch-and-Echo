@@ -4,6 +4,7 @@ Narration Text -> Audio Generation -> Image Generation -> Video Stitching."""
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -17,6 +18,16 @@ from .audio import (
 from .images import ComfyUIImageGenerator, ImageGenerator, PlaceholderImageGenerator
 from .render import FFmpegStitchPlan, build_stitch_plan, run_plan
 from .schema import Scene, VideoScript, VoiceRole
+
+
+def default_image_generator() -> ImageGenerator:
+    """Diffus when DIFFUS_KEY is set, otherwise ComfyUI (local server or Comfy Cloud)."""
+
+    if os.environ.get("DIFFUS_KEY"):
+        from .diffus import DiffusImageGenerator
+
+        return DiffusImageGenerator()
+    return ComfyUIImageGenerator()
 
 
 class PipelineConfig(BaseModel):
@@ -87,11 +98,7 @@ class Pipeline:
                 else ElevenLabsAudioGenerator()
             )
         if images is None:
-            images = (
-                PlaceholderImageGenerator(config.ffmpeg)
-                if config.placeholder_images
-                else ComfyUIImageGenerator()
-            )
+            images = PlaceholderImageGenerator(config.ffmpeg) if config.placeholder_images else default_image_generator()
         self.audio = audio
         self.images = images
 

@@ -21,7 +21,8 @@ and the Pydantic models enforce that shape before any API is called.
 | `src/gi_radio/schema.py` | `VoiceSettings`, `Scene`, `VideoScript`, `Protagonist`, `ColorGrade`, `RenderSettings`, validators |
 | `src/gi_radio/script.py` | The full `VideoScript` instance: 30 scenes, ~3,600 spoken words, ~32 min at 125 wpm |
 | `src/gi_radio/audio.py` | ElevenLabs TTS client (+ offline placeholder), paragraph breaks -> `<break>` tags |
-| `src/gi_radio/images.py` | ComfyUI API client with an SDXL txt2img graph (+ offline placeholder) |
+| `src/gi_radio/images.py` | ComfyUI API client (local server or Comfy Cloud) with an SDXL txt2img graph (+ offline placeholder) |
+| `src/gi_radio/diffus.py` | diffus.me client: fal-compatible queue API or v3 REST, same prompt/seed/size per scene |
 | `src/gi_radio/render.py` | FFmpeg plan: per-scene clip (Ken Burns + grade), radio filter on Hannah, xfade timeline |
 | `src/gi_radio/pipeline.py` | Orchestrator that runs the chain per scene and writes `manifest.json` |
 | `src/gi_radio/cli.py` | `validate`, `export`, `plan`, `render` |
@@ -44,6 +45,8 @@ Credentials (environment variables, or `.env` in the working directory):
 | --- | --- |
 | `ELEVENLABS_API_KEY` | ElevenLabs key (profile -> API Keys) |
 | `ELEVENLABS_NARRATOR_VOICE_ID`, `ELEVENLABS_HANNAH_VOICE_ID` | Optional voice overrides (defaults: Bill, Sarah) |
+| `DIFFUS_KEY` | diffus.me passkey (`pk_...`). When set, stills come from Diffus instead of ComfyUI |
+| `DIFFUS_API`, `DIFFUS_MODEL` | `fal` (default; app id such as `diffus-ai/juggernaut-xl-v9-rundiffusionphoto2`) or `v3` (checkpoint name from your Diffus workspace) |
 | `COMFYUI_URL` | Local ComfyUI server, e.g. `http://127.0.0.1:8188` |
 | `COMFYUI_API_KEY` | Comfy Cloud key from platform.comfy.org; selects `https://cloud.comfy.org` when `COMFYUI_URL` is empty |
 | `COMFYUI_CHECKPOINT` | Checkpoint name present on the target server (default `sd_xl_base_1.0.safetensors`) |

@@ -164,15 +164,27 @@ def cmd_check(_: argparse.Namespace) -> int:
             print(f"ElevenLabs: HTTP {sub.status_code} {sub.text[:200]}")
             ok = False
 
-    try:
-        comfy = ComfyUIImageGenerator()
-        info = comfy.check_auth()
-        who = info.get("email") or info.get("username") or info.get("system", {}).get("comfyui_version") or "ok"
-        print(f"ComfyUI: ok at {comfy.base_url} ({'cloud' if comfy.is_cloud else 'local'}), {who}; "
-              f"checkpoint {comfy.checkpoint}")
-    except (ComfyUIError, requests.RequestException) as exc:
-        print(f"ComfyUI: {exc}")
-        ok = False
+    if os.environ.get("DIFFUS_KEY"):
+        from .diffus import DiffusImageGenerator
+
+        try:
+            diffus = DiffusImageGenerator()
+            info = diffus.check_auth()
+            print(f"Images: Diffus ok ({info['mode']} API at {diffus.base_url}), model {diffus.model}"
+                  + (f"; {info['note']}" if info.get("note") else ""))
+        except (ComfyUIError, requests.RequestException) as exc:
+            print(f"Images: Diffus: {exc}")
+            ok = False
+    else:
+        try:
+            comfy = ComfyUIImageGenerator()
+            info = comfy.check_auth()
+            who = info.get("email") or info.get("username") or info.get("system", {}).get("comfyui_version") or "ok"
+            print(f"Images: ComfyUI ok at {comfy.base_url} ({'cloud' if comfy.is_cloud else 'local'}), {who}; "
+                  f"checkpoint {comfy.checkpoint}")
+        except (ComfyUIError, requests.RequestException) as exc:
+            print(f"Images: ComfyUI: {exc}")
+            ok = False
     return 0 if ok else 1
 
 
