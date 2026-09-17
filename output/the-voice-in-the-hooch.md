@@ -44,7 +44,7 @@ Not yet.
 
 First, the ordinary part. First, the last night you were ever a boy.
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Close view of a battered transistor radio on a wet plywood floor inside a dark sandbagged hooch, the amber-blue dial the only light, a boot and the edge of an ammo-crate cot in shadow, rain streaks on corrugated tin above. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Night interior of a sandbagged hooch, no daylight. A small dark transistor radio on wet plywood, its lit dial the only light in the room, a jungle boot and the edge of a cot in deep shadow, rain streaking the corrugated tin overhead. Painterly brushwork, film grain.`
 
 ### S02 - last_ordinary_night - narrator (127 words, 65s, starts 00:48)
 
@@ -144,7 +144,7 @@ You are a cherry. You are an FNG. The old men will not learn your name until you
 
 Danny has three hundred and sixty-three. He has a pen now. He makes his first X on the bus.
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Extreme close-up of a sweat-stained camouflage helmet cover with a hand-drawn grid of small boxes in ballpoint, only two crossed out, a cheap pen resting on the brim, a young hand with dirty nails, shallow focus, humid gray light. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Macro close-up of sweat-stained camouflage helmet-cover cloth, a ballpoint-pen grid of small hand-drawn squares inked across the fabric, only two squares scribbled out, a cheap pen resting on the brim, a young hand with dirty nails, humid gray light. Painterly brushwork, film grain.`
 
 ### S07 - short_timer_math - narrator (138 words, 71s, starts 06:10)
 
@@ -184,7 +184,7 @@ That is how you know he has decided to learn your name.
 
 > RADIO: We have been waiting for you.
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A small transistor radio on an upturned ammunition crate inside a dark hooch, its dial casting a cold blue glow across wet plywood, mosquito netting and a hanging poncho in shadow, one bare foot at the edge of the light. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Night interior of a dark hooch. A small brown transistor radio standing on an upturned ammunition crate, its lit dial glowing, the glow falling on wet plywood, mosquito netting and a hanging poncho in deep shadow, one bare foot at the edge of the light. Painterly brushwork, film grain.`
 
 ### S09 - radio_interlude - narrator (89 words, 47s, starts 07:52)
 
@@ -396,7 +396,7 @@ That is how you know something is wrong. In this country, nothing is dry. The on
 
 The platoon sergeant fills out a form. It has a box for a date. He fills it in.
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A soldier's belongings laid out on a camouflage poncho liner in the mud at dawn, a rifle, a canteen, a small Bible, and on top a sealed letter inside a clear plastic bag, dry, surrounded by the muddy boots of men standing in a silent circle. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Still life at dawn: a soldier's personal effects arranged neatly on an empty camouflage poncho liner spread in the mud, a rifle, a canteen, a small Bible, and on top a sealed letter inside a clear plastic bag, dry. Only the muddy boots of standing men at the edge of the frame. Painterly brushwork, film grain.`
 
 ### S20 - name_on_the_radio - hannah_radio (61 words, 37s, starts 19:36)
 
@@ -418,7 +418,7 @@ The platoon sergeant fills out a form. It has a box for a date. He fills it in.
 
 > RADIO: Has yours been printed yet?
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A radio on the floor of a dark bunker throwing cold blue light upward onto the still faces of young soldiers who have stopped moving, a hand frozen above the dial, rain on sandbags outside, everything else swallowed in black. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Inside a dark bunker at night, young soldiers sitting upright and frozen mid-motion around a radio on the floor, its cold glow lighting their still faces from below, a hand stopped above the dial, rain on sandbags outside, everything else black. Painterly brushwork, film grain.`
 
 ### S21 - name_on_the_radio - narrator (166 words, 87s, starts 20:13)
 
@@ -520,7 +520,7 @@ He has stopped reading Carol Ann's letters to anyone. There is less in them. It 
 
 > RADIO: I will be here tomorrow. Will you?
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Extreme close-up of a scratched military wristwatch on a thin sunburned wrist, lit only by the cold blue glow of a radio dial just out of frame, the second hand caught mid-sweep, dark bunker beyond. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. Extreme close-up of a scratched olive-drab 1960s military field watch with a plain black dial on a thin sunburned wrist, lit only by the faint glow of a radio dial just out of frame, the second hand caught mid-sweep, dark bunker beyond. Painterly brushwork, film grain.`
 
 ### S26 - short_and_shorter - narrator (146 words, 76s, starts 25:39)
 
@@ -540,7 +540,7 @@ The sergeant takes him off point. He argues. He loses. He is grateful, and asham
 
 The freedom bird. Every man in Vietnam talks about it like a myth. Like something that might still not be real when you get to the airfield.
 
-**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A helmet with a nearly complete grid of crossed-out boxes and the word SHORT inked across the cover, resting on a rucksack at the edge of dense jungle, humid haze, a young soldier's hand reaching for it, sick yellow afternoon light. Painterly brushwork, film grain.`
+**ComfyUI:** `Dark historical atmosphere, cinematic lighting, 8k resolution, oil painting aesthetic, moody and suspenseful. Vietnam War, 1968. A steel helmet with a camouflage cover resting on a rucksack at the edge of dense jungle, the cover inked with a ballpoint grid of small squares almost all crossed out, a young soldier's hand reaching for it, humid haze, sick yellow afternoon light. Painterly brushwork, film grain.`
 
 ### S27 - short_and_shorter - narrator (131 words, 69s, starts 26:55)
 

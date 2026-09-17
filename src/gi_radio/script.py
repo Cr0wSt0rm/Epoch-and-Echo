@@ -182,9 +182,9 @@ Not yet.
 First, the ordinary part. First, the last night you were ever a boy.
 """,
         "Transistor radio on a plywood hooch floor, dial glowing, rain on tin",
-        "Close view of a battered transistor radio on a wet plywood floor inside a dark sandbagged hooch, "
-        "the amber-blue dial the only light, a boot and the edge of an ammo-crate cot in shadow, "
-        "rain streaks on corrugated tin above.",
+        "Night interior of a sandbagged hooch, no daylight. A small dark transistor radio on wet plywood, "
+        "its lit dial the only light in the room, a jungle boot and the edge of a cot in deep shadow, "
+        "rain streaking the corrugated tin overhead.",
         ["radio static, slow tuning sweep", "rain on tin roof, steady", "distant single insect"],
         hold=6.0,
         transition=Transition.FADE_BLACK,
@@ -295,9 +295,9 @@ You are a cherry. You are an FNG. The old men will not learn your name until you
 Danny has three hundred and sixty-three. He has a pen now. He makes his first X on the bus.
 """,
         "Helmet cover with a hand-drawn short-timer calendar, ballpoint X marks, a pen",
-        "Extreme close-up of a sweat-stained camouflage helmet cover with a hand-drawn grid of small boxes in "
-        "ballpoint, only two crossed out, a cheap pen resting on the brim, a young hand with dirty nails, "
-        "shallow focus, humid gray light.",
+        "Macro close-up of sweat-stained camouflage helmet-cover cloth, a ballpoint-pen grid of small "
+        "hand-drawn squares inked across the fabric, only two squares scribbled out, a cheap pen resting on "
+        "the brim, a young hand with dirty nails, humid gray light.",
         ["ballpoint on canvas", "bus engine idling", "men's voices low, counting", "a zipper"],
         hold=4.0,
     ),
@@ -339,9 +339,9 @@ I am told there are new men with the Twenty-Fifth Division at Tay Ninh. Welcome 
 We have been waiting for you.
 """,
         "Hooch radio in the dark, dial glow throwing cold blue light across a wet plywood floor",
-        "A small transistor radio on an upturned ammunition crate inside a dark hooch, its dial casting a cold "
-        "blue glow across wet plywood, mosquito netting and a hanging poncho in shadow, one bare foot at the "
-        "edge of the light.",
+        "Night interior of a dark hooch. A small brown transistor radio standing on an upturned ammunition "
+        "crate, its lit dial glowing, the glow falling on wet plywood, mosquito netting and a hanging poncho "
+        "in deep shadow, one bare foot at the edge of the light.",
         ["radio static bed, AM warble", "rain on tin, light", "a cot creaking", "mosquito whine"],
         hold=5.0,
         transition=Transition.RADIO_DISSOLVE,
@@ -580,9 +580,9 @@ That is how you know something is wrong. In this country, nothing is dry. The on
 The platoon sergeant fills out a form. It has a box for a date. He fills it in.
 """,
         "Gear laid out on a poncho liner in the mud, a letter in a plastic bag on top, boots around it",
-        "A soldier's belongings laid out on a camouflage poncho liner in the mud at dawn, a rifle, a canteen, a "
-        "small Bible, and on top a sealed letter inside a clear plastic bag, dry, surrounded by the muddy boots "
-        "of men standing in a silent circle.",
+        "Still life at dawn: a soldier's personal effects arranged neatly on an empty camouflage poncho liner "
+        "spread in the mud, a rifle, a canteen, a small Bible, and on top a sealed letter inside a clear plastic "
+        "bag, dry. Only the muddy boots of standing men at the edge of the frame.",
         ["dawn insects", "plastic bag crinkling", "a pen on a clipboard", "silence, long"],
         hold=7.0,
         transition=Transition.FADE_BLACK,
@@ -605,9 +605,9 @@ Their families have been informed. Their names were printed in your own newspape
 Has yours been printed yet?
 """,
         "Radio in the dark, the men's faces half lit blue, nobody moving",
-        "A radio on the floor of a dark bunker throwing cold blue light upward onto the still faces of "
-        "young soldiers who have stopped moving, a hand frozen above the dial, rain on sandbags outside, "
-        "everything else swallowed in black.",
+        "Inside a dark bunker at night, young soldiers sitting upright and frozen mid-motion around a radio on "
+        "the floor, its cold glow lighting their still faces from below, a hand stopped above the dial, rain on "
+        "sandbags outside, everything else black.",
         ["radio static, thin", "distant 105mm battery, slow rhythm", "rain", "no other sound"],
         hold=7.0,
         transition=Transition.RADIO_DISSOLVE,
@@ -723,8 +723,9 @@ Look at your watch, GI. Look at the second hand. That is the sound of your year.
 I will be here tomorrow. Will you?
 """,
         "A wristwatch on a wrist in cold blue radio light, second hand mid-sweep",
-        "Extreme close-up of a scratched military wristwatch on a thin sunburned wrist, lit only by the cold "
-        "blue glow of a radio dial just out of frame, the second hand caught mid-sweep, dark bunker beyond.",
+        "Extreme close-up of a scratched olive-drab 1960s military field watch with a plain black dial on a "
+        "thin sunburned wrist, lit only by the faint glow of a radio dial just out of frame, the second hand "
+        "caught mid-sweep, dark bunker beyond.",
         ["wristwatch ticking, very close", "AM static", "a slow breath", "rain, distant"],
         hold=6.0,
         transition=Transition.RADIO_DISSOLVE,
@@ -746,9 +747,9 @@ The sergeant takes him off point. He argues. He loses. He is grateful, and asham
 The freedom bird. Every man in Vietnam talks about it like a myth. Like something that might still not be real when you get to the airfield.
 """,
         "Helmet calendar nearly full, SHORT written across the cover, jungle edge behind",
-        "A helmet with a nearly complete grid of crossed-out boxes and the word SHORT inked across the cover, "
-        "resting on a rucksack at the edge of dense jungle, humid haze, a young soldier's hand reaching for it, "
-        "sick yellow afternoon light.",
+        "A steel helmet with a camouflage cover resting on a rucksack at the edge of dense jungle, the cover "
+        "inked with a ballpoint grid of small squares almost all crossed out, a young soldier's hand reaching "
+        "for it, humid haze, sick yellow afternoon light.",
         ["insects, heavy", "a helmet set down on a ruck", "distant Huey", "boots on a trail, slow"],
         hold=5.0,
         transition=Transition.FADE_BLACK,
