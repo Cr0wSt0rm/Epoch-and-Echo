@@ -28,6 +28,12 @@ def test_api_key_selects_comfy_cloud_and_sets_header(clean_env, monkeypatch):
     assert gen.session.headers["X-API-Key"] == "pk_test"
 
 
+def test_key_format_warning_flags_registry_keys(clean_env):
+    assert ComfyUIImageGenerator(api_key="comfyui-abc").key_format_warning() is None
+    warning = ComfyUIImageGenerator(api_key="pk_abc").key_format_warning()
+    assert warning and "Registry publishing key" in warning and "comfyui-" in warning
+
+
 def test_cloud_url_without_key_is_refused(clean_env):
     with pytest.raises(ComfyUIError, match="COMFYUI_API_KEY"):
         ComfyUIImageGenerator(base_url=COMFY_CLOUD_URL)

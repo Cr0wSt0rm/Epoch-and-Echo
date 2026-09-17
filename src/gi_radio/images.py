@@ -130,10 +130,24 @@ class ComfyUIImageGenerator:
         if self.api_key:
             self.session.headers["X-API-Key"] = self.api_key
 
+    def key_format_warning(self) -> str | None:
+        """Comfy Platform API keys are 'comfyui-...'; 'pk_...' keys are Registry publishing keys."""
+
+        if not self.api_key or self.api_key.startswith("comfyui-"):
+            return None
+        kind = "a Registry publishing key (custom-node publishing only)" if self.api_key.startswith("pk_") else "unrecognised"
+        return (
+            f"COMFYUI_API_KEY starts with {self.api_key[:3]!r}, which is {kind}. Comfy API keys begin with "
+            "'comfyui-'. On platform.comfy.org -> Profile -> API Keys, create a *Comfy API key*, not a "
+            "Registry publishing key."
+        )
+
     def _check(self, response: requests.Response, what: str) -> requests.Response:
         if response.ok:
             return response
         hint = _STATUS_HELP.get(response.status_code, "")
+        if response.status_code == 401 and (warning := self.key_format_warning()):
+            hint = f"{hint} {warning}"
         raise ComfyUIError(f"{what} failed with HTTP {response.status_code}: {response.text[:300]} {hint}".strip())
 
     def check_auth(self) -> dict[str, Any]:
